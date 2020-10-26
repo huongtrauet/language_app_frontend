@@ -1,9 +1,24 @@
 <template>
-  <div>
-    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-    <nuxt-link :to="switchLocalePath('vi')">Tiếng việt</nuxt-link>
-    <nuxt />
+  <div class="container">
+    <component-header />
+    <div class="content">
+      <nuxt />
+    </div>
+    <component-footer />
   </div>
 </template>
-
-<style></style>
+<script>
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  components: {
+    "component-header": Header,
+    "component-footer": Footer,
+  },
+};
+</script>
+<style scoped>
+.content {
+  padding-top: 63px;
+}
+</style>
